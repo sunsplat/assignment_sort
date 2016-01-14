@@ -25,5 +25,6 @@ def insert(array, right_index, value)
 end
 
 insertion_sort([1,3,7,2,5])
+insertion_sort([1,3,7,2,-99,5,10,20,0])
 
 
