@@ -41,3 +41,29 @@ end
 p merge_sort([1,3,7,2,5,-99,0])
 
 
+## Merge Sort with element shift ##
+def merge_sort_2(array)
+	return array if array.length <= 1
+
+	left = merge_sort_2(array[0...array.size/2])
+	right = merge_sort_2(array[(array.size/2)...array.size])
+	
+	new_array = []
+
+	until left.empty? || right.empty?
+		if left[0] < right[0]
+			  new_array << left.shift
+		else
+		    new_array << right.shift
+		end    	  
+  end
+  left.length > 0 ? (new_array << left) : (new_array << right)	 
+
+	new_array.flatten
+end
+
+puts "THIS IS MERGE SORT STYLE 2"
+p merge_sort_2([1,3,7,2,5,-99,0])
+p merge_sort_2([1,3,7,2,5,-99,136,5,23,100])
+
+
